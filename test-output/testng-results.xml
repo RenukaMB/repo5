@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="89" started-at="2020-01-21T18:40:43 IST" finished-at="2020-01-21T18:40:43 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="89" started-at="2020-01-21T18:40:43 IST" finished-at="2020-01-21T18:40:43 IST">
+      <class name="Jira_API.CreateCommenttoexistingusingPut">
+        <test-method status="PASS" signature="Createnewissue()[pri:0, instance:Jira_API.CreateCommenttoexistingusingPut@49f5c307]" name="Createnewissue" duration-ms="60" started-at="2020-01-21T18:40:43 IST" finished-at="2020-01-21T18:40:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Createnewissue -->
+      </class> <!-- Jira_API.CreateCommenttoexistingusingPut -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
