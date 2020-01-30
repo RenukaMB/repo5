@@ -1,8 +1,7 @@
-package Jira_API;
+package MainPOJO;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Properties;
 import static io.restassured.RestAssured.given;
 
@@ -13,10 +12,10 @@ import Files.resources;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import scala.util.Sorting;
 
 public class JiraBasics01
 {
@@ -32,7 +31,8 @@ public class JiraBasics01
 	@Test
 	public void Jiraapi()
 	{ 
-		ArrayList<String> a=new ArrayList<String>();
+
+		//ArrayList<String> a=new ArrayList<String>();
 		//creating a session
 		RestAssured.baseURI=prob.getProperty("BaseURI");
 		Response res =given()
@@ -47,10 +47,33 @@ public class JiraBasics01
 		;
 		JsonPath js=ReusableMethods.rawToJSON(res);
 		String sessionvale=js.get("session.value");
+		//System.out.println(js.get());
+		System.out.println(res.asString());
 		System.out.println(sessionvale);
-		String	response=res.asString();
-		a.add(response);
-		System.out.println(a);
+		//String	response=res.asString();
+		//a.add(response);
+		
+		//System.out.println(a);
+		//List<String> expectedvalue=Arrays.asList(expectedresponse);
+		//assertTrue(a.equals(expectedvalue));
+		
+
+	//	String responseOutput=res.asString();
+	//	Gson gson = new Gson();
+	//	 SessionPojo session = gson.fromJson(responseOutput, SessionPojo.class);
+	
+		 
+		//	 System.out.println("Sessiong login Info...." + session.getSession().getValue());
+//		SessionPojo res=given()
+//				.header("Content-Type", "application/json")
+//				.body(payload.getuserlogindata()).expect().defaultParser(Parser.JSON)
+//				//.expect().defaultParser(Parser.JSON)
+//				.when()
+//				.post(resources.postresource()).as(SessionPojo.class);
+//		
+//		System.out.println(res.getSession().getValue());
+
+		
 	
 	}
 }

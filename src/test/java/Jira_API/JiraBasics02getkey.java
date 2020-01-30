@@ -3,6 +3,7 @@ package Jira_API;
 import static io.restassured.RestAssured.given;
 
 import Files.ReusableMethods;
+import Files.payload;
 import Files.resources;
 
 
@@ -11,18 +12,16 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class JiraBasics02getkey
+public class JiraBasics02getkey extends Beforjiraissue 
 {
 	//@Test
 	public static String Jiraapi()
 	{
 		//creating a session
-		RestAssured.baseURI="http://localhost:8010";
+		
 		Response res =given()
 		.header("Content-Type", "application/json")
-		.body("{\r\n" + 
-				"	\"username\":\"renukamb\", \"password\":\"renuka1234\" \r\n" + 
-				"}\r\n")
+		.body(payload.getuserlogindata())
 		.when()
 		.post(resources.postresource())
 		.then().statusCode(200)

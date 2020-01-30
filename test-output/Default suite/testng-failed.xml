@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Jira_API.NewBasiciID">
+      <class name="MainPOJO.Getall3">
         <methods>
-          <include name="Jiraapi"/>
+          <include name="getdata"/>
+          <include name="getallData"/>
         </methods>
-      </class> <!-- Jira_API.NewBasiciID -->
+      </class> <!-- MainPOJO.Getall3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

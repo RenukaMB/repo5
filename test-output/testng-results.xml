@@ -2,16 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="89" started-at="2020-01-21T18:40:43 IST" finished-at="2020-01-21T18:40:43 IST">
+  <suite name="Default suite" duration-ms="1962" started-at="2020-01-30T13:05:15 IST" finished-at="2020-01-30T13:05:17 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="89" started-at="2020-01-21T18:40:43 IST" finished-at="2020-01-21T18:40:43 IST">
-      <class name="Jira_API.CreateCommenttoexistingusingPut">
-        <test-method status="PASS" signature="Createnewissue()[pri:0, instance:Jira_API.CreateCommenttoexistingusingPut@49f5c307]" name="Createnewissue" duration-ms="60" started-at="2020-01-21T18:40:43 IST" finished-at="2020-01-21T18:40:43 IST">
+    <test name="Default test" duration-ms="1962" started-at="2020-01-30T13:05:15 IST" finished-at="2020-01-30T13:05:17 IST">
+      <class name="MainPOJO.Getall3">
+        <test-method status="PASS" signature="getdata()[pri:0, instance:MainPOJO.Getall3@58c1670b]" name="getdata" is-config="true" duration-ms="275" started-at="2020-01-30T13:05:15 IST" finished-at="2020-01-30T13:05:15 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Createnewissue -->
-      </class> <!-- Jira_API.CreateCommenttoexistingusingPut -->
+        </test-method> <!-- getdata -->
+        <test-method status="PASS" signature="getallData()[pri:0, instance:MainPOJO.Getall3@58c1670b]" name="getallData" duration-ms="1664" started-at="2020-01-30T13:05:15 IST" finished-at="2020-01-30T13:05:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getallData -->
+      </class> <!-- MainPOJO.Getall3 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

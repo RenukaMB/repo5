@@ -1,4 +1,4 @@
-package Jira_API;
+package MainPOJO;
 
 import static io.restassured.RestAssured.given;
 
@@ -6,6 +6,7 @@ import static io.restassured.RestAssured.given;
 import org.testng.annotations.Test;
 
 import Files.ReusableMethods;
+import Files.payload;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
@@ -14,22 +15,11 @@ public class Getall extends Beforjiraissue
 @Test
 	public static void getallData()
 	{
-		String x =JiraBasics02getkey.Jiraapi();
+		String x =CreateSessionJira.Jiraapi();
 		Response res=given()
 		.header("Content-Type", "application/json")
 		.header("cookie", "JSESSIONID="+x)
-		.body("{\r\n" + 
-				"\"fields\": {\r\n" + 
-				"        \"project\": {\r\n" + 
-				"            \"key\": \"NEW\"\r\n" + 
-				"        },\r\n" + 
-				"        \"summary\": \"create a issue\",\r\n" + 
-				"        \"issuetype\": {\r\n" + 
-				"            \"name\": \"Task\"\r\n" + 
-				"        }\r\n" + 
-				"        \r\n" + 
-				"}\r\n" + 
-				"}")
+		.body(payload.datatoGetBodydata())
 		.when()
 		.post("/rest/api/2/issue")
 		.then().statusCode(201)
@@ -45,13 +35,7 @@ public class Getall extends Beforjiraissue
 		Response res1=given()
 		.header("Content-Type", "application/json")
 		.header("cookie", "JSESSIONID="+x)
-		.body("{\r\n" + 
-				"	\"body\": \"add my comments to new task\",\r\n" + 
-				"    \"visibility\": {\r\n" + 
-				"        \"type\": \"role\",\r\n" + 
-				"        \"value\": \"Administrators\"\r\n" + 
-				"    }\r\n" + 
-				"}")
+		.body(payload.getdatatonewcomment())
 		.when()
 		.post("/rest/api/2/issue/"+issueid+"/comment")
 		.then()
@@ -66,13 +50,7 @@ public class Getall extends Beforjiraissue
 		    Response res2=given()
 				.header("Content-Type", "application/json")
 				.header("cookie", "JSESSIONID="+x)
-				.body("{\r\n" + 
-						"	\"body\": \"update a comment to task\",\r\n" + 
-						"    \"visibility\": {\r\n" + 
-						"        \"type\": \"role\",\r\n" + 
-						"        \"value\": \"Administrators\"\r\n" + 
-						"    }\r\n" + 
-						"}")
+				.body(payload.getdatatoexistingcomment())
 				.when()
 				.put("/rest/api/2/issue/"+issueid+"/comment/"+commentid+"")
 				.then()
@@ -82,14 +60,14 @@ public class Getall extends Beforjiraissue
 				System.out.println("my latest commient id after upadting existing comment = "+updatecommentid);	
 				
 				//delete a updated comments
-				Response res3=given()
-						.header("Content-Type", "application/json")
-						.header("cookie", "JSESSIONID="+x)
-						.when()
-						.delete("/rest/api/2/issue/"+issueid+"/comment/"+updatecommentid+"")
-						.then().assertThat().statusCode(204).statusLine("HTTP/1.1 204 ")
-						.extract().response();
-				
+//				Response res3=given()
+//						.header("Content-Type", "application/json")
+//						.header("cookie", "JSESSIONID="+x)
+//						.when()
+//						.delete("/rest/api/2/issue/"+issueid+"/comment/"+updatecommentid+"")
+//						.then().assertThat().statusCode(204).statusLine("HTTP/1.1 204 ")
+//						.extract().response();
+//				
 
                 //delete an issue what we are created
 //				         given()
