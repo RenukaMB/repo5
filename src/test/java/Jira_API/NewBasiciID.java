@@ -2,7 +2,6 @@ package Jira_API;
 
 import static io.restassured.RestAssured.given;
 
-import org.testng.annotations.Test;
 
 import Files.ReusableMethods;
 import Files.resources;

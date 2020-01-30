@@ -16,7 +16,6 @@ import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import scala.util.Sorting;
 
 public class JiraBasics01
 {

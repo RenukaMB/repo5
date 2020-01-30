@@ -44,4 +44,9 @@ public static String deleteissue(String issueid)
 	String delete="/rest/api/2/issue/"+issueid+"";
 	return delete;
 	}
+public static String getissueInfo(String issueid )
+{
+	String get ="/rest/api/2/issue/"+issueid+"";
+	return get;
+	}
 }

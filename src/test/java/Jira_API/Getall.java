@@ -82,7 +82,7 @@ public class Getall extends Beforjiraissue
 				System.out.println("my latest commient id after upadting existing comment = "+updatecommentid);	
 				
 				//delete a updated comments
-				Response res3=given()
+				        given()
 						.header("Content-Type", "application/json")
 						.header("cookie", "JSESSIONID="+x)
 						.when()

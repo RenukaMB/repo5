@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="MainPOJO.Getall3">
+      <class name="MainPOJO.MainClassJiraApi">
         <methods>
           <include name="getdata"/>
           <include name="getallData"/>
         </methods>
-      </class> <!-- MainPOJO.Getall3 -->
+      </class> <!-- MainPOJO.MainClassJiraApi -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

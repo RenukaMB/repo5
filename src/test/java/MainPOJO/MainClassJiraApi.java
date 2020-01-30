@@ -37,13 +37,13 @@ public class MainClassJiraApi extends Beforjiraissue
 		.then().spec(resp)
 		.extract().response();
 		
-		//we can grab an issue id by using jsonpath
+		//we can grab an issue id by using json path
 		
 		//JsonPath js=ReusableMethods.rawToJSON(response);
 		//	String issueid=js.get("id");
 		//System.out.println("issue id of create issue = "+issueid);
 			
-		//we can grab an issue id by using pojoclass
+		//we can grab an issue id by using pojo class
 		
 		String responseOutput1=response.asString();
 		Gson gson1 = new Gson();
@@ -60,13 +60,13 @@ public class MainClassJiraApi extends Beforjiraissue
 		.then().spec(resp)
 		.extract().response();
 		
-		//we can grab an issue id by using jsonpath
+		//we can grab an issue id by using json path
 	 
 		 JsonPath js1=ReusableMethods.rawToJSON(response1);
 		 String commentid=js1.get("id");
 		 System.out.println("updating the issue with comment = "+ commentid);
 
-		//update my prevoiue comment
+		//update my previous  comment
 		
 		RequestSpecification res2=given().spec(req)
 		.body(payload.getdatatoexistingcomment());
@@ -78,20 +78,31 @@ public class MainClassJiraApi extends Beforjiraissue
 		String updatecommentid=js2.get("id");
 		System.out.println("my latest commient id after upadting existing comment = "+updatecommentid);	
 				
-		//delete a updated comments
+		//deletes updated comments
 		
-		RequestSpecification res3= given().spec(req);
-		 res3.when()
-		.delete(resources.deletecomment(issueid, updatecommentid))
-		.then().spec(resp2)
-		.extract().response();
+		// RequestSpecification res3= given().spec(req);
+		// res3.when()
+		// .delete(resources.deletecomment(issueid, updatecommentid))
+		// .then().spec(resp2)
+		// .extract().response();
 			
 		 //delete an issue what we are created
 		
-		 RequestSpecification res4=   given().spec(req);
-		 res4.when()
-		.delete(resources.deleteissue(issueid))
-		.then().spec(resp2)
-		.extract().response();
+		// RequestSpecification res4=   given().spec(req);
+		// res4.when()
+		//.delete(resources.deleteissue(issueid))
+		//.then().spec(resp2)
+		//.extract().response();
+		 
+		//get an issue information
+		 RequestSpecification res4=given().spec(req);
+		 Response respons3= res4.when().get(resources.getissueInfo(issueid))
+		 .then().spec(resp1)
+		 .extract().response();
+		 JsonPath js3=ReusableMethods.rawToJSON(respons3);
+		String summary=js3.get("fields.summary");
+		System.out.println("summary of isuue = "+summary);
+		//System.out.println(respons3.asString());
+		 
 		}
 		}
