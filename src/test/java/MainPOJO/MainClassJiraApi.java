@@ -87,11 +87,11 @@ public class MainClassJiraApi extends Beforjiraissue
 		.extract().response();
 			
 		 //delete an issue what we are created
-//		
-//		 RequestSpecification res4=   given().spec(req);
-//		Response response4=	res4.when()
-//		.delete(resources.deleteissue(issueid))
-//		.then().spec(resp2)
-//		.extract().response();
+		
+		 RequestSpecification res4=   given().spec(req);
+		 res4.when()
+		.delete(resources.deleteissue(issueid))
+		.then().spec(resp2)
+		.extract().response();
 		}
 		}

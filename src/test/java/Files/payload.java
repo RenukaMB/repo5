@@ -78,7 +78,7 @@ public static dataissuetype getdataissuetype()
 public static fieldsdata getfieldsdata()
 {
 	fieldsdata G=new fieldsdata();
-	G.setSummary("new issue afternoon");
+	G.setSummary("Create a New Isuue In Jira");
 	G.setIssuetype(getdataissuetype());
 	G.setProject(getdataproject());
 	fieldsdata H=G;
@@ -104,7 +104,7 @@ public static datatovisibility getdatatovisibility()
 public static datatonewcomment getdatatonewcomment() 
 {
 	datatonewcomment M=new datatonewcomment();
-	M.setBody("add my comment to issue");
+	M.setBody("Add my comment to issue");
 	M.setVisibility(getdatatovisibility());
 	datatonewcomment N=M; 
 	return N;
@@ -122,7 +122,7 @@ public static datatovisibility getdatatoexistingvisibility()
 public static datatonewcomment getdatatoexistingcomment() 
 {
 	datatonewcomment Q=new datatonewcomment();
-	Q.setBody("Upate comment to existing ");
+	Q.setBody("Upate comment to existing comment");
 	Q.setVisibility(getdatatovisibility());
 	datatonewcomment R=Q; 
 	return R;
